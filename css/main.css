@@ -123,12 +123,30 @@ footer {
     text-shadow: 1px 1px #000000;
 }
 
+tr a {
+    font-size: .75em;
+}
+
 div#listContainer table {
     width: 100%;
 }
 
 th {
     text-align: left;
+}
+
+td, th {
+    padding: 2px;
+}
+
+td:last-child {
+    padding-left: 6px;
+}
+
+span[contenteditable="true"] {
+    display: block;
+    border: 1px solid #a0a0a0;
+    width: 100%;
 }
 
 

@@ -15,11 +15,18 @@
             <td>{{firstName}}</td>
             <td>{{email}}</td>
             <td>{{phone}}</td>
-            <td><a href="#/edit/{{id}}">Edit</a> | <a href="#/delete/{{id}}">Delete</a>
+            <td><a href="#/edit/{{id}}">Edit</a> | <a href="#" class="deleteLink">Delete</a></td>
         </script>
 
         <script id="contactRecordEditTemplate" type="text/x-handlebars-template">
-
+            <td><span contenteditable="true">{{lastName}}</span></td>
+            <td><span contenteditable="true">{{firstName}}</span></td>
+            <td><span contenteditable="true">{{email}}</span></td>
+            <td><span contenteditable="true">{{phone}}</span></td>
+            <td>
+                <input type="button" value="Save">
+                <a href="#">Cancel</a>
+            </td>
         </script>
 
         <script src="js/application.js"></script>
