@@ -100,10 +100,14 @@ h1 {
 }
 
 div#content {
-    width: 700px;
+    width: 800px;
     border-radius: 6px;
     border: 1px solid #a0a0a0;
     margin: 15px auto;
+}
+
+div#createContainer {
+    padding-bottom: 15px;
 }
 
 header, footer, div#applicationContainer {
@@ -147,6 +151,17 @@ span[contenteditable="true"] {
     display: block;
     border: 1px solid #a0a0a0;
     width: 100%;
+}
+
+fieldset {
+    border: 1px solid #a0a0a0;
+    background: #eeeeee;
+    margin: 0;
+    padding: 3px;
+}
+
+form input {
+    font-size: .8em;
 }
 
 

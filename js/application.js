@@ -6,9 +6,7 @@ var app = {};
     _.extend(app, Backbone.Events);
 
     app.Contact = Backbone.Model.extend({
-        validate: function () {
-            
-        }
+
     });
 
     app.ContactList = Backbone.Collection.extend({

@@ -24,8 +24,8 @@
             <td><span contenteditable="true">{{email}}</span></td>
             <td><span contenteditable="true">{{phone}}</span></td>
             <td>
-                <input type="button" value="Save">
                 <a href="#">Cancel</a>
+                <input type="button" value="Save">
             </td>
         </script>
 
@@ -39,8 +39,18 @@
 
             <div id="applicationContainer">
                 <div id="createContainer">
-
+                    <form>
+                        <fieldset>
+                            <legend>New Contact</legend>
+                            <input type="text" name="firstName" placeholder="First Name">
+                            <input type="text" name="lastName" placeholder="Last Name">
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="text" name="phone" placeholder="Phone">
+                            <input type="button" value="Save">
+                        </fieldset>
+                    </form>
                 </div>
+
                 <div id="listContainer">
                     <table>
                         <thead>
@@ -58,9 +68,7 @@
                 </div>
             </div>
 
-            <footer>
-                This is the bottom.
-            </footer>
+            <footer></footer>
 		</div>
     </body>
 </html>
