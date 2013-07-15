@@ -9,7 +9,20 @@
         <script src="js/lib/underscore-1.5.1.min.js"></script>
         <script src="js/lib/backbone-1.0.0.min.js"></script>
         <script src="js/lib/backbone-localstorage-1.1.5.min.js"></script>
-		<script src="js/application.js"></script>
+
+        <script id="contactRecordViewTemplate" type="text/x-handlebars-template">
+            <td>{{lastName}}</td>
+            <td>{{firstName}}</td>
+            <td>{{email}}</td>
+            <td>{{phone}}</td>
+            <td><a href="#/edit/{{id}}">Edit</a> | <a href="#/delete/{{id}}">Delete</a>
+        </script>
+
+        <script id="contactRecordEditTemplate" type="text/x-handlebars-template">
+
+        </script>
+
+        <script src="js/application.js"></script>
     </head>
     <body>
         <div id="content">
