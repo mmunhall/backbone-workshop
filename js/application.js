@@ -13,7 +13,31 @@ var app = {};
         localStorage: new Backbone.LocalStorage("backbone-workshop"),
         model: app.Contact,
         comparator: function (contact) {
+            
             return contact.get('lastName') + ' ' + contact.get('firstName');
+        }
+    });
+
+    app.CreateContactView = Backbone.View.extend({
+        el: $('div#createContainer'),
+        events: {
+            'click input[type="button"]': 'create'
+        },
+        initialize: function () {
+            this.listenTo(app, 'create:done', this.clearForm);
+        },
+        create: function () {
+            console.log('createView: create');
+            app.trigger('create:new', {
+                lastName: $('input[name="lastName"]').val(),
+                firstName: $('input[name="firstName"]').val(),
+                phone: $('input[name="phone"]').val(),
+                email: $('input[name="email"]').val()
+            });
+        },
+        clearForm: function () {
+            console.log('createView: clearForm');
+            this.$('input[type="text"]').val("");
         }
     });
 
@@ -22,7 +46,7 @@ var app = {};
         className: 'recordView',
         template: Handlebars.compile($('script#contactRecordViewTemplate').html()),
         id: function () {
-            return 'recordView_' + this.model.get('id');
+            return 'recordView_' + this.model.id;
         },
         initialize: function () {
             this.listenTo(this.model, 'change', this.render);
@@ -83,38 +107,21 @@ var app = {};
 
     app.ContactApp = Backbone.Router.extend({
         routes: {
-            "create": "create",
             "edit/:id": "edit",
             "*actions": "list"
         },
         initialize: function () {
             this.contacts = new app.ContactList();
+            this.createView = new app.CreateContactView({el: $('div#createContainer')});
             this.listenTo(this.contacts, 'reset', this.addAll);
+            this.listenTo(this.contacts, 'add', this.addOne);
             this.listenTo(app, 'edit:done', this.afterEdit);
-            //this.contacts.fetch();
-            this.contacts.reset([
-                {
-                    id: 1,
-                    lastName: 'Smith',
-                    firstName: 'Agent',
-                    phone: '303-555-8033',
-                    email: 'wantanderson99@gmail.com'
-                },
-                {
-                    id: 2,
-                    lastName: 'Munhall',
-                    firstName: 'Mike',
-                    phone: '303-514-9144',
-                    email: 'munhall.mike@gmail.com'
-                }
-            ]);
+            this.listenTo(app, 'create:new', this.create);
+            this.contacts.fetch();
             Backbone.history.start();
         },
         list: function () {
             console.log('route: list');
-        },
-        create: function () {
-            console.log('route: create');
         },
         edit: function (id) {
             console.log('route: edit ' + id);
@@ -126,6 +133,11 @@ var app = {};
             $('tr.recordView').removeClass('hidden');
             $('tr.editView').addClass('hidden');
             this.navigate('/');
+        },
+        create: function (attrs) {
+            console.log('router: create');
+            this.contacts.create(attrs, {wait: true});
+            app.trigger('create:done');
         },
         addAll: function () {
             console.log('router: addAll');
