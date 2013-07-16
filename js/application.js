@@ -13,8 +13,7 @@ var app = {};
         localStorage: new Backbone.LocalStorage("backbone-workshop"),
         model: app.Contact,
         comparator: function (contact) {
-            
-            return contact.get('lastName') + ' ' + contact.get('firstName');
+            return [contact.get('lastName'), contact.get('firstName')];
         }
     });
 
@@ -125,7 +124,7 @@ var app = {};
         },
         edit: function (id) {
             console.log('route: edit ' + id);
-            $('tr#recordView_' + id).addClass('hidden');;
+            $('tr#recordView_' + id).addClass('hidden');
             $('tr#editView_' + id).removeClass('hidden');
         },
         afterEdit: function () {
@@ -145,8 +144,8 @@ var app = {};
         },
         addOne: function (contact) {
             console.log('router: addOne');
-            var recordView = new app.ContactRecordView({model: contact});
-            var editView = new app.ContactEditView({model: contact});
+            var recordView = new app.ContactRecordView({model: contact}),
+                editView = new app.ContactEditView({model: contact});
             recordView.render();
             editView.render();
             $('table tbody').append(recordView.el);
