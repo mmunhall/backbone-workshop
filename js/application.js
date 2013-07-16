@@ -112,7 +112,6 @@ var app = {};
         initialize: function () {
             this.contacts = new app.ContactList();
             this.createView = new app.CreateContactView({el: $('div#createContainer')});
-            this.listenTo(this.contacts, 'reset', this.addAll);
             this.listenTo(this.contacts, 'add', this.addOne);
             this.listenTo(app, 'edit:done', this.afterEdit);
             this.listenTo(app, 'create:new', this.create);
@@ -137,10 +136,6 @@ var app = {};
             console.log('router: create');
             this.contacts.create(attrs, {wait: true});
             app.trigger('create:done');
-        },
-        addAll: function () {
-            console.log('router: addAll');
-            this.contacts.each(this.addOne, this);
         },
         addOne: function (contact) {
             console.log('router: addOne');
