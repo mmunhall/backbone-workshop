@@ -11,10 +11,7 @@ var app = {};
 
     app.ContactList = Backbone.Collection.extend({
         localStorage: new Backbone.LocalStorage("backbone-workshop"),
-        model: app.Contact,
-        comparator: function (contact) {
-            return [contact.get('lastName'), contact.get('firstName')];
-        }
+        model: app.Contact
     });
 
     app.CreateContactView = Backbone.View.extend({
