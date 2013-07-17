@@ -6,12 +6,17 @@ var app = {};
     _.extend(app, Backbone.Events);
 
     app.Contact = Backbone.Model.extend({
-
+        /* Some things we _could_ provide here:
+            1) Validation
+            2) URL
+            3) Defaults
+         */
     });
 
     app.ContactList = Backbone.Collection.extend({
-        localStorage: new Backbone.LocalStorage("backbone-workshop"),
+        localStorage: new Backbone.LocalStorage("backbone-workshop"), // localStorage replaces URL
         model: app.Contact
+        // We could use a comparator here to maintain an alphabetical list, but the ordering does not seem to work with localStorage.
     });
 
     app.CreateContactView = Backbone.View.extend({
