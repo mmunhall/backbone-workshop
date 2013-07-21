@@ -8,7 +8,7 @@ var app = {};
     });
 
     app.ContactList = Backbone.Collection.extend({
-
+        localStorage: new Backbone.LocalStorage("backbone-workshop"), // localStorage replaces URL
     });
 
     app.ContactRecordView = Backbone.View.extend({
