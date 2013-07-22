@@ -32,3 +32,7 @@ Intialize a collection of contacts, fetch existing saved contacts, and start Bac
 workshop/temp-reset
 -------------------
 Since we have no exiting contacts to fetch, we'll replace fetch() with reset() until we have implemented the create feature of the application.
+
+workshop/create-recordview-template
+-----------------------------------
+Create a template for our record view.
