@@ -12,3 +12,7 @@ Create an application.js file with some bootstrap code to get started.
 workshop/create-first-objects
 -----------------------------
 We'll build the first Backbone objects we plan to use in our application.
+
+workshop/start-html-file
+------------------------
+Begin building the HTML of our application.
