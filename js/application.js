@@ -41,12 +41,9 @@ var app = {};
         },
         addOne: function (contact) {
             console.log('router: addOne');
-            var recordView = new app.ContactRecordView({model: contact}),
-                editView = new app.ContactEditView({model: contact});
+            var recordView = new app.ContactRecordView({model: contact});
             recordView.render();
-            editView.render();
             $('table tbody').append(recordView.el);
-            $('table tbody').append(editView.el);
         },
         addAll: function () {
             console.log('addAll');
