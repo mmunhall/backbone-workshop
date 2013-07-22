@@ -28,3 +28,7 @@ Create a default route for listing contacts.
 workshop/init-collection
 ------------------------
 Intialize a collection of contacts, fetch existing saved contacts, and start Backbone.history.start() to route the default URL.
+
+workshop/temp-reset
+-------------------
+Since we have no exiting contacts to fetch, we'll replace fetch() with reset() until we have implemented the create feature of the application.

@@ -26,7 +26,14 @@ var app = {};
         },
         initialize: function () {
             this.contacts = new app.ContactList();
-            this.contacts.fetch();
+            this.listenTo(this.contacts, 'reset', this.addAll);
+            //this.contacts.fetch();
+            this.contacts.reset({
+                firstName: 'Mike',
+                lastName: 'Munhall',
+                phone: '303-514-9144',
+                email: 'munhall.mike@gmail.com'
+            });
             Backbone.history.start();
         },
         list: function () {
@@ -41,6 +48,10 @@ var app = {};
             $('table tbody').append(recordView.el);
             $('table tbody').append(editView.el);
         },
+        addAll: function () {
+            console.log('addAll');
+            this.contacts.each(this.addOne, this);
+        }
     });
 })()
 
