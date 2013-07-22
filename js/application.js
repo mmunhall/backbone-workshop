@@ -34,12 +34,21 @@ var app = {};
             this.contacts = new app.ContactList();
             this.listenTo(this.contacts, 'reset', this.addAll);
             //this.contacts.fetch();
-            this.contacts.reset({
-                firstName: 'Mike',
-                lastName: 'Munhall',
-                phone: '303-514-9144',
-                email: 'munhall.mike@gmail.com'
-            });
+            this.contacts.reset([{
+                    firstName: 'Mike',
+                    lastName: 'Munhall',
+                    phone: '303-514-9144',
+                    email: 'munhall.mike@gmail.com'
+                },
+                {
+                    firstName: 'Agent',
+                    lastName: 'Smith',
+                    phone: '303-555-1234',
+                    email: 'wantanderson99@gmail.com',
+                    foo: 'bar',
+                    baz: 'qux'
+                }
+            ]);
             Backbone.history.start();
         },
         list: function () {

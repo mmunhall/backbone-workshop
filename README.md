@@ -40,3 +40,7 @@ Create a template for our record view.
 workshop/begin-recordview
 -------------------------
 Add some properties to the record view object so that contacts will be rendered into the page.
+
+workshop/add-another-contact
+----------------------------
+Add another object to the collection for good measure. Notice that we are now passing an array to reset rather than a single object. Also, note that any name/value pair can be sent and the model will be dutifully created using that inforamtion.
