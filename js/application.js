@@ -13,7 +13,13 @@ var app = {};
     });
 
     app.ContactRecordView = Backbone.View.extend({
-
+        tagName: 'tr',
+        template: Handlebars.compile($('script#contactRecordViewTemplate').html()),
+        render: function () {
+            console.log('recordView: render');
+            this.$el.html(this.template(this.model.toJSON()));
+            return this;
+        }
     });
 
     app.ContactEditView = Backbone.View.extend({

@@ -36,3 +36,7 @@ Since we have no exiting contacts to fetch, we'll replace fetch() with reset() u
 workshop/create-recordview-template
 -----------------------------------
 Create a template for our record view.
+
+workshop/begin-recordview
+-------------------------
+Add some properties to the record view object so that contacts will be rendered into the page.
