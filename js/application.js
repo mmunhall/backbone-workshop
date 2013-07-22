@@ -34,7 +34,8 @@ var app = {};
             this.contacts = new app.ContactList();
             this.listenTo(this.contacts, 'reset', this.addAll);
             //this.contacts.fetch();
-            this.contacts.reset([{
+            this.contacts.reset([
+                {
                     firstName: 'Mike',
                     lastName: 'Munhall',
                     phone: '303-514-9144',
