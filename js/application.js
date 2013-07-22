@@ -20,7 +20,15 @@ var app = {};
     });
 
     app.ContactApp = Backbone.Router.extend({
-
+        routes: {
+            "*actions": "list"
+        },
+        initialize: function () {
+            Backbone.history.start();
+        },
+        list: function () {
+            console.log('route: list');
+        }
     });
 })()
 

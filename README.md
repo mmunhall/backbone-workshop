@@ -20,3 +20,7 @@ Begin building the HTML of our application.
 workshop/add-list-table
 -----------------------
 Create the HTML table for the listing of contacts.
+
+workshop/create-list-route
+--------------------------
+Create a default route for listing contacts.
