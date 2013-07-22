@@ -16,3 +16,7 @@ We'll build the first Backbone objects we plan to use in our application.
 workshop/start-html-file
 ------------------------
 Begin building the HTML of our application.
+
+workshop/add-list-table
+-----------------------
+Create the HTML table for the listing of contacts.
