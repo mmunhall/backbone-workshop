@@ -24,3 +24,7 @@ Create the HTML table for the listing of contacts.
 workshop/create-list-route
 --------------------------
 Create a default route for listing contacts.
+
+workshop/init-collection
+------------------------
+Intialize a collection of contacts, fetch existing saved contacts, and start Backbone.history.start() to route the default URL.

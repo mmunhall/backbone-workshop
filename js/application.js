@@ -8,7 +8,8 @@ var app = {};
     });
 
     app.ContactList = Backbone.Collection.extend({
-        localStorage: new Backbone.LocalStorage("backbone-workshop") // localStorage replaces URL
+        localStorage: new Backbone.LocalStorage("backbone-workshop"), // localStorage replaces URL
+        model: app.Contact
     });
 
     app.ContactRecordView = Backbone.View.extend({
@@ -24,11 +25,22 @@ var app = {};
             "*actions": "list"
         },
         initialize: function () {
+            this.contacts = new app.ContactList();
+            this.contacts.fetch();
             Backbone.history.start();
         },
         list: function () {
             console.log('route: list');
-        }
+        },
+        addOne: function (contact) {
+            console.log('router: addOne');
+            var recordView = new app.ContactRecordView({model: contact}),
+                editView = new app.ContactEditView({model: contact});
+            recordView.render();
+            editView.render();
+            $('table tbody').append(recordView.el);
+            $('table tbody').append(editView.el);
+        },
     });
 })()
 
