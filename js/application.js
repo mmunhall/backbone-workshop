@@ -45,6 +45,7 @@ var app = {};
             return 'recordView_' + this.model.id;
         },
         initialize: function () {
+            this.listenTo(this.model, 'change', this.render);
             this.listenTo(this.model, 'destroy', this.remove);
         },
         render: function () {
@@ -68,6 +69,10 @@ var app = {};
             return 'editView_' + this.model.get('id');
         },
         template: Handlebars.compile($('script#contactRecordEditTemplate').html()),
+        initialize: function () {
+            this.listenTo(this.model, 'change', this.render);
+            this.listenTo(this.model, 'destroy', this.remove);
+        },
         events: {
             'click input[type="button"]': 'save'
         },

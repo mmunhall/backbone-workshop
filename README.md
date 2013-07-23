@@ -104,3 +104,7 @@ Save changes to the model when the Save button is clicked.
 workshop/swap-views-after-edit
 ------------------------------
 Switch from edit view to record view after editing a model.
+
+workshop/update-views-after-edit
+--------------------------------
+Add listeners to the views that will re-render the views when changes to models occur. We will also add a listener to the edit view for when a model is destroyed.
