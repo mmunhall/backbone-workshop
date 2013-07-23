@@ -51,26 +51,9 @@ var app = {};
         initialize: function () {
             this.contacts = new app.ContactList();
             this.createView = new app.CreateContactView({el: $('div#createContainer')});
-            this.listenTo(this.contacts, 'reset', this.addAll);
             this.listenTo(this.contacts, 'add', this.addOne);
             this.listenTo(app, 'create:new', this.create);
-            //this.contacts.fetch();
-            this.contacts.reset([
-                {
-                    firstName: 'Mike',
-                    lastName: 'Munhall',
-                    phone: '303-514-9144',
-                    email: 'munhall.mike@gmail.com'
-                },
-                {
-                    firstName: 'Agent',
-                    lastName: 'Smith',
-                    phone: '303-555-1234',
-                    email: 'wantanderson99@gmail.com',
-                    foo: 'bar',
-                    baz: 'qux'
-                }
-            ]);
+            this.contacts.fetch();
             Backbone.history.start();
         },
         list: function () {
@@ -85,10 +68,6 @@ var app = {};
             var recordView = new app.ContactRecordView({model: contact});
             recordView.render();
             $('table tbody').append(recordView.el);
-        },
-        addAll: function () {
-            console.log('addAll');
-            this.contacts.each(this.addOne, this);
         }
     });
 })()

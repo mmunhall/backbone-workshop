@@ -60,3 +60,7 @@ Extend the application with Backbone.Events, which will allow us to trigger and 
 workshop/persist-new-contact
 ----------------------------
 Trigger an event when the save button is clicked, listen for the triggered event in the router, add the new model to the collection, listen for the add event on the model.
+
+workshop/remove-temp-reset
+--------------------------
+Now that we are successfully creating and persisting new models, we can remove the temporary workaround for fetch() that we implemented using reset().
