@@ -76,3 +76,7 @@ Add a delete link to the record view template.
 workshop/destroy-model
 ----------------------
 Destroy the model when clicking the delete link.
+
+workshop/remove-model-on-destroy
+--------------------------------
+Listen for a model's destroy event and remove its associated view.
