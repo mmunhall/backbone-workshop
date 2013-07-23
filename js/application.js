@@ -110,6 +110,8 @@ var app = {};
         },
         list: function () {
             console.log('route: list');
+            $('tr.recordView').removeClass('hidden');
+            $('tr.editView').addClass('hidden');
         },
         edit: function (id) {
             console.log('route: edit ' + id);
@@ -118,9 +120,7 @@ var app = {};
         },
         afterEdit: function () {
             console.log('router: doneEditing');
-            $('tr.recordView').removeClass('hidden');
-            $('tr.editView').addClass('hidden');
-            this.navigate('/');
+            this.navigate('/', {trigger: true});
         },
         create: function (attrs) {
             console.log('router: create');
