@@ -56,3 +56,7 @@ Begin building the view to control the create form, and instantiate the new view
 workshop/extend-app-with-events
 -------------------------------
 Extend the application with Backbone.Events, which will allow us to trigger and listen for custom events.
+
+workshop/persist-new-contact
+----------------------------
+Trigger an event when the save button is clicked, listen for the triggered event in the router, add the new model to the collection, listen for the add event on the model.

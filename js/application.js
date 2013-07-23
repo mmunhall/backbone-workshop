@@ -21,6 +21,12 @@ var app = {};
         },
         create: function () {
             console.log('createView: create');
+            app.trigger('create:new', {
+                lastName: $('input[name="lastName"]').val(),
+                firstName: $('input[name="firstName"]').val(),
+                phone: $('input[name="phone"]').val(),
+                email: $('input[name="email"]').val()
+            });
         }
     });
 
@@ -46,6 +52,8 @@ var app = {};
             this.contacts = new app.ContactList();
             this.createView = new app.CreateContactView({el: $('div#createContainer')});
             this.listenTo(this.contacts, 'reset', this.addAll);
+            this.listenTo(this.contacts, 'add', this.addOne);
+            this.listenTo(app, 'create:new', this.create);
             //this.contacts.fetch();
             this.contacts.reset([
                 {
@@ -67,6 +75,10 @@ var app = {};
         },
         list: function () {
             console.log('route: list');
+        },
+        create: function (attrs) {
+            console.log('router: create');
+            this.contacts.create(attrs, {wait: true});
         },
         addOne: function (contact) {
             console.log('router: addOne');
