@@ -108,3 +108,7 @@ Switch from edit view to record view after editing a model.
 workshop/update-views-after-edit
 --------------------------------
 Add listeners to the views that will re-render the views when changes to models occur. We will also add a listener to the edit view for when a model is destroyed.
+
+workshop/cancel-edit
+--------------------
+Implement a cancel link when editing.

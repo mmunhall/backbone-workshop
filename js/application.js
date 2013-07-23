@@ -74,12 +74,19 @@ var app = {};
             this.listenTo(this.model, 'destroy', this.remove);
         },
         events: {
+            'click a': 'cancel',
             'click input[type="button"]': 'save'
         },
         render: function () {
             console.log('editView: render');
             this.$el.html(this.template(this.model.toJSON()));
             return this;
+        },
+        cancel: function (e) { // this would be better using a custom event.
+            console.log('editView: cancel');
+            e.preventDefault();
+            this.render();
+            app.trigger('edit:done');
         },
         save: function (e) {
             console.log('editView: save');
