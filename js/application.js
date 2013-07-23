@@ -3,6 +3,8 @@ var app = {};
 (function () {
     "use strict";
 
+    _.extend(app, Backbone.Events);
+
     app.Contact = Backbone.Model.extend({
 
     });

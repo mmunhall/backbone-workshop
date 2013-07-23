@@ -52,3 +52,7 @@ Add a form to the HTML page for creating new contacts.
 workshop/start-create-view
 --------------------------
 Begin building the view to control the create form, and instantiate the new view from the application router.
+
+workshop/extend-app-with-events
+-------------------------------
+Extend the application with Backbone.Events, which will allow us to trigger and listen for custom events.
