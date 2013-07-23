@@ -40,6 +40,7 @@ var app = {};
     app.ContactRecordView = Backbone.View.extend({
         tagName: 'tr',
         template: Handlebars.compile($('script#contactRecordViewTemplate').html()),
+        className: 'recordView',
         id: function () {
             return 'recordView_' + this.model.id;
         },
@@ -84,6 +85,7 @@ var app = {};
                 email: this.$el.find('span:eq(2)').text(),
                 phone: this.$el.find('span:eq(3)').text()
             });
+            app.trigger('edit:done');
         }
     });
 
@@ -96,6 +98,7 @@ var app = {};
             this.contacts = new app.ContactList();
             this.createView = new app.CreateContactView({el: $('div#createContainer')});
             this.listenTo(this.contacts, 'add', this.addOne);
+            this.listenTo(app, 'edit:done', this.afterEdit);
             this.listenTo(app, 'create:new', this.create);
             this.contacts.fetch();
             Backbone.history.start();
@@ -107,6 +110,12 @@ var app = {};
             console.log('route: edit ' + id);
             $('tr#recordView_' + id).addClass('hidden');
             $('tr#editView_' + id).removeClass('hidden');
+        },
+        afterEdit: function () {
+            console.log('router: doneEditing');
+            $('tr.recordView').removeClass('hidden');
+            $('tr.editView').addClass('hidden');
+            this.navigate('/');
         },
         create: function (attrs) {
             console.log('router: create');

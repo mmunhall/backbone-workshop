@@ -100,3 +100,7 @@ Implement the edit view and then create an edit view when a new model is added t
 workshop/persist-changes-on-save
 --------------------------------
 Save changes to the model when the Save button is clicked.
+
+workshop/swap-views-after-edit
+------------------------------
+Switch from edit view to record view after editing a model.
