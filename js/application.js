@@ -147,9 +147,6 @@ var app = {};
             editView.render();
             $('table tbody').append(recordView.el);
             $('table tbody').append(editView.el);
-        },
-        cancel: function () {
-            console.log('router: cancel edit');
         }
     });
 })()
