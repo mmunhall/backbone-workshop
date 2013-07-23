@@ -63,6 +63,7 @@ var app = {};
 
     app.ContactApp = Backbone.Router.extend({
         routes: {
+            "edit/:id": "edit",
             "*actions": "list"
         },
         initialize: function () {
@@ -75,6 +76,9 @@ var app = {};
         },
         list: function () {
             console.log('route: list');
+        },
+        edit: function (id) {
+            console.log('route: edit ' + id);
         },
         create: function (attrs) {
             console.log('router: create');

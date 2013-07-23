@@ -84,3 +84,7 @@ Listen for a model's destroy event and remove its associated view.
 workshop/add-edit-template
 --------------------------
 Create a template for editing individual models, and put an Edit link on the record view.
+
+workshop/add-edit-route
+-----------------------
+Create a route and a route handler for editing a model.
