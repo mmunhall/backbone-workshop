@@ -68,3 +68,7 @@ Now that we are successfully creating and persisting new models, we can remove t
 workshop/cleanup-after-create
 -----------------------------
 Reset the create form after clicking the Save button by implementing a clear function on the create view, listening for a particular event from the create view, and trigger the event from the router.
+
+workshop/add-delete-link
+------------------------
+Add a delete link to the record view template.
