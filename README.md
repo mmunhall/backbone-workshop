@@ -88,3 +88,7 @@ Create a template for editing individual models, and put an Edit link on the rec
 workshop/add-edit-route
 -----------------------
 Create a route and a route handler for editing a model.
+
+workshop/hide-recordview-on-edit
+--------------------------------
+Add an ID to our record view, and hide the record view (identifying it by the new ID element), and show the yet-to-be-created edit view.

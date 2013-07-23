@@ -40,6 +40,9 @@ var app = {};
     app.ContactRecordView = Backbone.View.extend({
         tagName: 'tr',
         template: Handlebars.compile($('script#contactRecordViewTemplate').html()),
+        id: function () {
+            return 'recordView_' + this.model.id;
+        },
         initialize: function () {
             this.listenTo(this.model, 'destroy', this.remove);
         },
@@ -79,6 +82,8 @@ var app = {};
         },
         edit: function (id) {
             console.log('route: edit ' + id);
+            $('tr#recordView_' + id).addClass('hidden');
+            $('tr#editView_' + id).removeClass('hidden');
         },
         create: function (attrs) {
             console.log('router: create');
