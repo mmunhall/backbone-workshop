@@ -12,6 +12,16 @@ var app = {};
         model: app.Contact
     });
 
+    app.CreateContactView = Backbone.View.extend({
+        el: $('div#createContainer'),
+        events: {
+            'click input[type="button"]': 'create'
+        },
+        create: function () {
+            console.log('createView: create');
+        }
+    });
+
     app.ContactRecordView = Backbone.View.extend({
         tagName: 'tr',
         template: Handlebars.compile($('script#contactRecordViewTemplate').html()),
@@ -32,6 +42,7 @@ var app = {};
         },
         initialize: function () {
             this.contacts = new app.ContactList();
+            this.createView = new app.CreateContactView({el: $('div#createContainer')});
             this.listenTo(this.contacts, 'reset', this.addAll);
             //this.contacts.fetch();
             this.contacts.reset([

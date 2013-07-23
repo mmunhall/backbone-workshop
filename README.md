@@ -48,3 +48,7 @@ Add another object to the collection for good measure. Notice that we are now pa
 workshop/add-create-form
 ------------------------
 Add a form to the HTML page for creating new contacts.
+
+workshop/start-create-view
+--------------------------
+Begin building the view to control the create form, and instantiate the new view from the application router.
