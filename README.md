@@ -72,3 +72,7 @@ Reset the create form after clicking the Save button by implementing a clear fun
 workshop/add-delete-link
 ------------------------
 Add a delete link to the record view template.
+
+workshop/destroy-model
+----------------------
+Destroy the model when clicking the delete link.

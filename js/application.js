@@ -44,6 +44,13 @@ var app = {};
             console.log('recordView: render');
             this.$el.html(this.template(this.model.toJSON()));
             return this;
+        },
+        events: {
+            'click a.deleteLink': 'delete'
+        },
+        delete: function () {
+            console.log('recordView: delete');
+            this.model.destroy();
         }
     });
 
