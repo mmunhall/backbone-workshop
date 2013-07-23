@@ -67,10 +67,23 @@ var app = {};
             return 'editView_' + this.model.get('id');
         },
         template: Handlebars.compile($('script#contactRecordEditTemplate').html()),
+        events: {
+            'click input[type="button"]': 'save'
+        },
         render: function () {
             console.log('editView: render');
             this.$el.html(this.template(this.model.toJSON()));
             return this;
+        },
+        save: function (e) {
+            console.log('editView: save');
+            e.preventDefault();
+            this.model.save({
+                lastName: this.$el.find('span:eq(0)').text(),
+                firstName: this.$el.find('span:eq(1)').text(),
+                email: this.$el.find('span:eq(2)').text(),
+                phone: this.$el.find('span:eq(3)').text()
+            });
         }
     });
 

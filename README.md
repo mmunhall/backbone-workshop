@@ -96,3 +96,7 @@ Add an ID to our record view, and hide the record view (identifying it by the ne
 workshop/implement-edit-view
 ----------------------------
 Implement the edit view and then create an edit view when a new model is added to the collection.
+
+workshop/persist-changes-on-save
+--------------------------------
+Save changes to the model when the Save button is clicked.
