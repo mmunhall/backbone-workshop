@@ -19,6 +19,9 @@ var app = {};
         events: {
             'click input[type="button"]': 'create'
         },
+        initialize: function () {
+            this.listenTo(app, 'create:done', this.clearForm);
+        },
         create: function () {
             console.log('createView: create');
             app.trigger('create:new', {
@@ -27,6 +30,10 @@ var app = {};
                 phone: $('input[name="phone"]').val(),
                 email: $('input[name="email"]').val()
             });
+        },
+        clearForm: function () {
+            console.log('createView: clearForm');
+            this.$('input[type="text"]').val("");
         }
     });
 
@@ -62,6 +69,7 @@ var app = {};
         create: function (attrs) {
             console.log('router: create');
             this.contacts.create(attrs, {wait: true});
+            app.trigger('create:done');
         },
         addOne: function (contact) {
             console.log('router: addOne');

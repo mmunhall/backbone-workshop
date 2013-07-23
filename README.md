@@ -64,3 +64,7 @@ Trigger an event when the save button is clicked, listen for the triggered event
 workshop/remove-temp-reset
 --------------------------
 Now that we are successfully creating and persisting new models, we can remove the temporary workaround for fetch() that we implemented using reset().
+
+workshop/cleanup-after-create
+-----------------------------
+Reset the create form after clicking the Save button by implementing a clear function on the create view, listening for a particular event from the create view, and trigger the event from the router.
