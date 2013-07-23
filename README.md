@@ -92,3 +92,7 @@ Create a route and a route handler for editing a model.
 workshop/hide-recordview-on-edit
 --------------------------------
 Add an ID to our record view, and hide the record view (identifying it by the new ID element), and show the yet-to-be-created edit view.
+
+workshop/implement-edit-view
+----------------------------
+Implement the edit view and then create an edit view when a new model is added to the collection.

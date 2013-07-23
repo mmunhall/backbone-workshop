@@ -61,7 +61,17 @@ var app = {};
     });
 
     app.ContactEditView = Backbone.View.extend({
-
+        tagName: 'tr',
+        className: 'hidden editView',
+        id: function () {
+            return 'editView_' + this.model.get('id');
+        },
+        template: Handlebars.compile($('script#contactRecordEditTemplate').html()),
+        render: function () {
+            console.log('editView: render');
+            this.$el.html(this.template(this.model.toJSON()));
+            return this;
+        }
     });
 
     app.ContactApp = Backbone.Router.extend({
@@ -92,9 +102,12 @@ var app = {};
         },
         addOne: function (contact) {
             console.log('router: addOne');
-            var recordView = new app.ContactRecordView({model: contact});
+            var recordView = new app.ContactRecordView({model: contact}),
+                editView = new app.ContactEditView({model: contact});
             recordView.render();
+            editView.render();
             $('table tbody').append(recordView.el);
+            $('table tbody').append(editView.el);
         }
     });
 })()
