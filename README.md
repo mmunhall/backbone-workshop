@@ -80,3 +80,7 @@ Destroy the model when clicking the delete link.
 workshop/remove-model-on-destroy
 --------------------------------
 Listen for a model's destroy event and remove its associated view.
+
+workshop/add-edit-template
+--------------------------
+Create a template for editing individual models, and put an Edit link on the record view.
