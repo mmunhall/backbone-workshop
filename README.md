@@ -7,10 +7,12 @@ You can do the "workshop" on your own by checking out, in order, the branches be
 
 The advantage of having a separate branch for each step of the workshop is that participants can simply checkout a branch to catch up or if they understand the step and don't feel like typing. The disadvantage is the tedious nature of making changes to the workshop: changes must be made to the master branch, the branch where the change is introduced, and all branches following that branch. This is made easier by merging or cherry picking, but it's still tedious. There may be a better way. Would I create a workshop this way again in the future? Maybe. It really is very effective as a teaching tool.
 
-###TODO###
+####TODO:####
 1. Annotate the source for parsing in [Docco](http://jashkenas.github.io/docco/).
 2. Find and fix the inconsistencies between branches:
     1. Missing workshop/swap-views-after-edit branch.
+	2. ...
+	3. ...
 
 workshop/start
 --------------
