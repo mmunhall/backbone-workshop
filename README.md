@@ -1,11 +1,11 @@
 backbone-workshop
 =================
 
-This project is used in a guided workshop to help learn the Backbone library/framework. The master branch contains the finished, working application. The application uses a local storage adapter so no server-side technology is required.
-
-You can do the "workshop" on your own by checking out, in order, the branches below and diffing the changes between branches and writing the code yourself. Be aware that there are a few errors scattered across the branches that are usually corrected by checking out the next step. I will get around to correcting those errors soon.
+This project is used in a guided workshop to help learn the Backbone library/framework. The master branch contains the finished, working application. You can do the "workshop" on your own cloning this project and then checking out, in order, the branches listed below. Diff the changes between branches to see what is being introduced and write the code yourself. Be aware that there are a few errors scattered across the branches that are usually corrected by checking out the next step. I will get around to properly fixing those errors soon.
 
 The advantage of having a separate branch for each step of the workshop is that participants can simply checkout a branch to catch up or if they understand the step and don't feel like typing. The disadvantage is the tedious nature of making changes to the workshop: changes must be made to the master branch, the branch where the change is introduced, and all branches following that branch. This is made easier by merging or cherry picking, but it's still tedious. There may be a better way. Would I create a workshop this way again in the future? Maybe. It really is very effective as a teaching tool.
+
+The application uses a local storage adapter so no server-side technology is required. All of the resources and dependencies, both JavaScript and CSS, are included in the project. Nothing needs to be downloaded or configured. The only files that are edited during the workshop are index.html and js/application.js.
 
 ####TODO:####
 1. Annotate the source for parsing in [Docco](http://jashkenas.github.io/docco/).
