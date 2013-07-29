@@ -9,7 +9,8 @@ The application uses a local storage adapter so no server-side technology is req
 
 ####TODO:####
 1. Annotate the source for parsing in [Docco](http://jashkenas.github.io/docco/).
-2. Find and fix the inconsistencies between branches:
+2. Add information to the description in each branch to help a participant understand what is being introduced.
+3. Find and fix the inconsistencies between branches:
     1. Missing workshop/swap-views-after-edit branch.
 	2. ...
 	3. ...
