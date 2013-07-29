@@ -1,6 +1,15 @@
 backbone-workshop
 =================
 
+This project is used in a guided workshop to help learn the Backbone library/framework. The master branch contains the finished, working application. The application uses a local storage adapter so no server-side technology is required.
+
+You can do the "workshop" on your own by checking out, in order, the branches below and diffing the changes between branches and writing the code yourself. Be aware that there are a few errors scattered across the brances that are usually corrected by checking out the next step. I will get around to correcting those errors soon.
+
+###TODO###
+1. Annotate the source for parsing in [Docco](http://jashkenas.github.io/docco/).
+2. Find and fix the inconsistencies between branches:
+    1. Missing workshop/swap-views-after-edit branch.
+
 workshop/start
 --------------
 Begin here. This branch contains the JavaScript dependencies, some CSS and an index.html file to get started.
